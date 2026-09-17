@@ -223,6 +223,9 @@ const server = net.createServer((socket) => {
     }
   });
   socket.on("close", () => console.log(`🔌 Client disconnected | broker=B${BROKER_ID}`));
+  socket.on("error", (error) => {
+  console.warn(`⚠️ Socket error | broker=B${BROKER_ID} | ${error.code || error.message}`);
+});
 });
 
 server.listen(PORT, () => {
