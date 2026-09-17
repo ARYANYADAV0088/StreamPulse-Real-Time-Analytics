@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NovaCart demo storefront connected to the StreamPulse event pipeline." />
+  <title>NovaCart — Modern essentials</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="announcement">Free shipping on orders over $75 · Demo storefront connected to StreamPulse</div>
+
+  <header class="site-header">
+    <a class="brand" href="#home" data-page="/home">
+      <span class="brand-mark">N</span>
+      <span><strong>NovaCart</strong><small>Modern essentials</small></span>
+    </a>
+
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#home" data-page="/home">Home</a>
+      <a href="#shop" data-page="/shop">Shop</a>
+      <a href="#collections" data-page="/collections">Collections</a>
+      <a href="#about" data-page="/about">About</a>
+    </nav>
+
+    <div class="header-actions">
+      <form id="searchForm" class="search-box">
+        <span>⌕</span>
+        <input id="searchInput" type="search" placeholder="Search products" aria-label="Search products" />
+      </form>
+      <button class="icon-button" id="accountButton" aria-label="Account">◎</button>
+      <button class="cart-button" id="cartButton">Bag <span id="cartCount">0</span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <span class="eyebrow">SPRING / SUMMER 2026</span>
+        <h1>Better things.<br /><em>Made simple.</em></h1>
+        <p>Curated everyday products designed for work, travel and the moments in between.</p>
+        <div class="hero-actions">
+          <button class="button primary" data-scroll="shop" data-track="click" data-page="/shop">Shop the collection</button>
+          <button class="button ghost" data-scroll="collections" data-track="click" data-page="/collections">Explore collections</button>
+        </div>
+        <div class="hero-trust"><span>✓ Easy returns</span><span>✓ Secure checkout</span><span>✓ Ships worldwide</span></div>
+      </div>
+      <div class="hero-product">
+        <div class="floating-card top"><strong>New drop</strong><span>Orbit Carry Pack</span></div>
+        <div class="product-art hero-art backpack"><span>◈</span></div>
+        <div class="floating-card bottom"><span>★★★★★</span><strong>4.9 / 5</strong></div>
+      </div>
+    </section>
+
+    <section class="shop-section" id="shop">
+      <div class="section-head">
+        <div><span class="eyebrow">THE SHOP</span><h2>Customer favourites</h2></div>
+        <div class="filters" id="filters">
+          <button class="filter active" data-category="all">All</button>
+          <button class="filter" data-category="tech">Tech</button>
+          <button class="filter" data-category="travel">Travel</button>
+          <button class="filter" data-category="desk">Desk</button>
+        </div>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+
+    <section class="collections" id="collections">
+      <div class="collection-card dark">
+        <span class="eyebrow">TRAVEL LIGHT</span>
+        <h2>Everything you need.<br />Nothing you don't.</h2>
+        <button class="button light" data-track="click" data-page="/collections/travel" data-scroll="shop">Shop travel</button>
+      </div>
+      <div class="collection-card warm">
+        <span class="eyebrow">DESK RESET</span>
+        <h2>A calmer setup<br />for sharper work.</h2>
+        <button class="button dark-button" data-track="click" data-page="/collections/desk" data-scroll="shop">Shop desk</button>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div><span class="eyebrow">WHY NOVACART</span><h2>Designed around<br /><em>real life.</em></h2></div>
+      <div class="about-points">
+        <article><b>01</b><h3>Thoughtful design</h3><p>Clean products that solve everyday problems without adding clutter.</p></article>
+        <article><b>02</b><h3>Built to last</h3><p>Durable materials, practical details and products worth keeping.</p></article>
+        <article><b>03</b><h3>Human service</h3><p>Fast support, simple returns and no complicated fine print.</p></article>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <div><span class="eyebrow">THE NOVA LIST</span><h2>Get the good stuff first.</h2><p>New drops, useful guides and occasional offers.</p></div>
+      <form id="newsletterForm" class="newsletter-form"><input id="emailInput" type="email" placeholder="you@example.com" required /><button class="button primary" type="submit">Join</button></form>
+    </section>
+  </main>
+
+  <footer><div><strong>NovaCart</strong><span>Modern essentials for everyday life.</span></div><small>Demo storefront · Event telemetry powered by StreamPulse</small></footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping bag">
+    <div class="drawer-head"><div><span class="eyebrow">YOUR BAG</span><h2>Shopping bag</h2></div><button class="close" id="closeCart">×</button></div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-footer"><div><span>Subtotal</span><strong id="cartTotal">$0.00</strong></div><button class="button primary full" id="checkoutButton">Checkout</button><small>Demo checkout — no payment is processed.</small></div>
+  </aside>
+
+  <div class="modal" id="accountModal">
+    <button class="close" id="closeAccount">×</button>
+    <span class="eyebrow">WELCOME BACK</span><h2>Join NovaCart</h2><p>Create an account to save your favourites and track orders.</p>
+    <form id="signupForm"><input type="email" placeholder="Email address" required /><input type="password" placeholder="Password" required /><button class="button primary full" type="submit">Create account</button></form>
+    <small>This is a demo account flow.</small>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>

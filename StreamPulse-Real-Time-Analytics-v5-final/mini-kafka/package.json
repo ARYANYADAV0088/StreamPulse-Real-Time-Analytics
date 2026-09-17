@@ -1,0 +1,15 @@
+{
+  "name": "mini-kafka",
+  "version": "3.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "broker": "node src/broker.js",
+    "producer:test": "node src/producer-test.js",
+    "consumer:test": "node src/consumer-test.js",
+    "demo": "node src/client.js",
+    "cluster:test": "node src/cluster-smoke-test.js",
+    "start:cluster": "powershell -ExecutionPolicy Bypass -File start-cluster.ps1",
+    "cluster": "powershell -ExecutionPolicy Bypass -File start-cluster.ps1"
+  }
+}
